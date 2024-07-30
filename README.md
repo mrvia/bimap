@@ -1,4 +1,6 @@
 # bimap
+![testing](https://github.com/mrvia/bimap/actions/workflows/test.yml/badge.svg)
+[![Go Reference](https://pkg.go.dev/badge/github.com/mrvia/bimap.svg)](https://pkg.go.dev/github.com/mrvia/bimap)
 
 Bi-directional map for Go.
 
