@@ -21,10 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Go ${{ matrix.os }}
+      - name: Set up Go ${{ matrix.go }}
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.os }}
+          go-version: ${{ matrix.go }}
           cache: false
 
       - name: Build
