@@ -8,3 +8,12 @@ func reverseMap[K, V comparable](forward map[K]V) map[V]K {
 	}
 	return reverse
 }
+
+func contains[K comparable](slice []K, value K) bool {
+	for _, item := range slice {
+		if item == value {
+			return true
+		}
+	}
+	return false
+}

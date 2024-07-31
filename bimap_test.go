@@ -1,7 +1,6 @@
 package bimap
 
 import (
-	"slices"
 	"testing"
 )
 
@@ -36,11 +35,11 @@ func TestNewBiMap(t *testing.T) {
 		// Check entries
 		for k, v := range m {
 
-			if slices.Contains(keys, k) != true {
+			if contains(keys, k) != true {
 				t.Errorf("Expected key %s in BiMap", k)
 			}
 
-			if slices.Contains(values, v) != true {
+			if contains(values, v) != true {
 				t.Errorf("Expected value %v in BiMap", v)
 			}
 
@@ -112,11 +111,11 @@ func TestNewReadOnlyBiMap(t *testing.T) {
 		// Check entries
 		for k, v := range m {
 
-			if slices.Contains(keys, k) != true {
+			if contains(keys, k) != true {
 				t.Errorf("Expected key %s in BiMap", k)
 			}
 
-			if slices.Contains(values, v) != true {
+			if contains(values, v) != true {
 				t.Errorf("Expected value %v in BiMap", v)
 			}
 
