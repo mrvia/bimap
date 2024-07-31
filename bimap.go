@@ -1,4 +1,3 @@
-// Package bimap ...
 package bimap
 
 type bimap[K, V comparable] struct {
@@ -8,6 +7,17 @@ type bimap[K, V comparable] struct {
 
 // NewBiMap creates a new BiMap instance from a given map.
 func NewBiMap[K, V comparable](initMap map[K]V) BiMap[K, V] {
+	return &bimap[K, V]{
+		forward:  initMap,
+		reversed: reverseMap(initMap),
+	}
+}
+
+// NewReadOnlyBiMap creates a new ReadOnlyBiMap instance from a given map.
+// The ReadOnlyBiMap is read-only and cannot be modified after creation.
+// This is useful when you want to pass a BiMap to a function that requires a ReadOnlyBiMap,
+// but you don't want to modify the original BiMap.
+func NewReadOnlyBiMap[K, V comparable](initMap map[K]V) ReadOnlyBiMap[K, V] {
 	return &bimap[K, V]{
 		forward:  initMap,
 		reversed: reverseMap(initMap),

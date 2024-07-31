@@ -1,4 +1,3 @@
-// Package bimap ...
 package bimap
 
 func reverseMap[K, V comparable](forward map[K]V) map[V]K {
